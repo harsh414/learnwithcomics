@@ -19,7 +19,7 @@
     <script src="{{asset('js/loopcounter.js')}}"></script>
 
 </head>
-<body class="font-sans bg-gray-100 text-gray-900" x-data="{top:true}">
+<body class="font-sans text-gray-900" x-data="{top:true}" style="background: url('https://res.cloudinary.com/dkerurdbc/image/upload/v1630479365/istockphoto-1006539038-640x640_xqpw6y.jpg');background-size: cover;opacity: 0.9">
 <header class="fixed bg-black sm:bg-black z-50 flex flex-col top-0 left-0 right-0 md:flex-row items-center text-white justify-center px-8 py-1
                 space-x-10 md:space-x-24"
         :class="{'bg-gray-300 sm:bg-gray-300 md:bg-gray-300 lg:bg-gray-300 ': !top}"

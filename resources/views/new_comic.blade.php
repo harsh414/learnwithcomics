@@ -2,7 +2,7 @@
 @section('content')
     <main class="container max-w-custom mx-auto pt-36 sm:pt-36 md:pt-48 flex flex-col sm:flex-col md:flex-row justify-center">
         <div class="md:w-3/4 mt-20 md:mt-12 text-center">
-            <h1 class="text-center text-5xl font-extrabold">Register Here !</h1>
+            <h1 class="text-center text-3xl tracking-wider font-extrabold">ADD COMIC HERE</h1>
 
             <div class="text-center bg-gray-200 px-6 py-2 pt-6 mt-14 md:mr-4" x-data="{flashMessage:true}"> <!-- form for register -->
                 @if(session()->has('success'))
@@ -27,8 +27,8 @@
                     </div>
                 @endif
 
-                <h3 class="font-semibold text-xl tracking-wider">Registration Form</h3>
-                <form action="{{route('participant.store')}}" method="POST" class="px-3 py-6">
+                <h3 class="font-semibold text-xl tracking-wider">Add your comic here</h3>
+                <form action="{{route('comic.store')}}" method="POST" class="px-3 py-6" enctype="multipart/form-data">
                     {{@csrf_field()}}
                     <div class="flex flex-col md:flex-row md:space-x-12">
                         <div class="mb-4 md:w-1/2">
@@ -63,20 +63,33 @@
                             </select>
                         </div>
                     </div>
-                    <div class="md:w-1/2 mt-5 text-left mx-auto">
-                        <label for="grade" class="grade pt-1">Board</label>
-                        <select name="board" id="board" class="w-full bg-gray-100 text-sm rounded-xl border-none px-4 py-2">
-                            <option value="1">CBSE</option>
-                            <option value="2">ICSE</option>
-                            <option value="3">STATE BOARD</option>
-                            <option value="4">IB</option>
-                            <option value="5">GCSE</option>
-                            <option value="6">NIOS</option>
-                        </select>
+                    <div class="flex flex-col md:flex-row md:space-x-12">
+                        <div class="mb-4 md:w-1/2 text-left">
+                            <label for="grade" class="grade pt-1">Board</label>
+                            <select name="board" id="board" class="w-full bg-gray-100 text-sm rounded-xl border-none px-4 py-2">
+                                <option value="1">CBSE</option>
+                                <option value="2">ICSE</option>
+                                <option value="3">STATE BOARD</option>
+                                <option value="4">IB</option>
+                                <option value="5">GCSE</option>
+                                <option value="6">NIOS</option>
+                            </select>
+                        </div>
+                        <div class="mb-4 md:w-1/2 text-left">
+                            <label for="comic_type" class="topic">Comic Type</label>
+                            <select name="comic_type" id="comic_type" class="topic w-full bg-gray-100 text-sm rounded-xl border-none px-4 py-2">
+                                <option value="1">One Paper</option>
+                                <option value="2">Comic Strips (8 panels)</option>
+                                <option value="3">3 Page Comics</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-4 md:w-1/2 text-left">
+                        <input type="file" name="file" id="file" required>
                     </div>
                     <div class="flex items-center justify-center space-x-3 mt-8">
                         <button type="submit" class="hover:bg-blue-400 flex items-center justify-center w-1/3 md:w-1/5 h-9 text-lg bg-blue-600 text-white font-semibold rounded-xl border border-blue hover:bg-blue-hover transition duration-150 ease-in px-13 py-5">
-                            <span class="ml-1">Register Now</span>
+                            <span class="ml-1">ADD NOW</span>
                         </button>
                     </div>
                 </form>
