@@ -14,7 +14,7 @@ class TopicsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('grades')->insert([
+        DB::table('topics')->insert([
             'grade_id'=>1,
             'topic'=>"Nature"
         ],[
